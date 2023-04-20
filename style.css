@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-purple: #6649c2;
+    --color-purple-dark: #332167;
+    --color-red: #eb1650;
+    --color-yellow: #ffd031;
+}
+
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #231059, #151414);
+    color: white;
+    padding: 12px;
+    font-family: 'Fredoka One', cursive;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    gap: 16px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.info .avatar {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-top: 16px;
+}
+
+.info .profile a {
+    color: var(--color-purple);
+    text-decoration: none;
+}
+
+
+
+.game-arena {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-info {
+    background: var(--color-purple-dark);
+    padding: 16px;
+    border-radius: 16px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 16px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.game-arena .game-info .box-player .turn {
+    display: none;
+}
+
+.game-arena .game-info .box-player.active .turn {
+    display: block;
+}
+
+.game-arena .game-info .box-player.active {
+    border: 1px solid white;
+}
+
+.game-arena .game-info .box-player {
+    padding: 12px;
+    border-radius: 16px;
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
+}
+
+.game-arena .box-player .player-label {
+    font-size: 40px;
+}
+
+.game-arena .box-player .player-label.x {
+    color: var(--color-red);
+}
+
+.game-arena .box-player .player-name {
+    font-size: 12px;
+}
+
+.game-arena .box-player .turn {
+    font-size: 12px;
+    font-family: monospace;
+}
+
+.game-arena .box-player .player-label.o {
+    color: var(--color-yellow);
+}
+
+.btn {
+    border: none;
+    padding: 12px 16px;
+    border-radius: 16px;
+    background: white;
+    color: var(--color-red);
+    font-family: 'Fredoka One', cursive;
+    cursor: pointer;
+}
+
+.game-play {
+    margin-top: 16px;
+    background: var(--color-purple);
+    padding: 16px;
+    border-radius: 16px;
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(3, minmax(80px, 200px));
+}
+
+.game-play .btn-tic-tac-tow {
+    aspect-ratio: 1;
+    background: var(--color-purple-dark);
+    border-radius: 16px;
+    padding: 16px;
+    font-size: 80px;
+    font-family: 'Fredoka One', cursive;
+    border: none;
+    transition: all 0.3s ease 0s;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.game-play .btn-tic-tac-tow.x {
+    color: var(--color-red);
+}
+
+.game-play .btn-tic-tac-tow.o {
+    color: var(--color-yellow);
+}
+
+.game-play .btn-tic-tac-tow:disabled {
+    cursor: not-allowed;
+}
+
+.game-play .btn-tic-tac-tow:hover {
+    transform: translateY(-4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 15px 20px #231059;
+}
+
+/* small device */
+
+@media(width < 400px) {
+    .game-play .btn-tic-tac-tow {
+        font-size: 40px;
+    }
+}
